@@ -1,0 +1,6 @@
+Deberás:
+*Crear un registro y login completo por roles.
+        roles Profesor y alumno
+*Autenticación del registro.
+*Crear tareas con roles creados.
+*Documentar el código desarrollado.
