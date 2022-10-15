@@ -6,7 +6,7 @@
 
 <script>
 export default {
-name: 'Students',
+name: 'app-students',
 data() {
     return {
         mesage: "Students",

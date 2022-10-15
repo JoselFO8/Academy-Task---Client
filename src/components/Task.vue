@@ -6,7 +6,7 @@
 
 <script>
 export default {
-name: 'Task',
+name: 'app-task',
 data() {
     return {
         mesage: "Task",

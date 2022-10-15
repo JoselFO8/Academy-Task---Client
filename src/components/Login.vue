@@ -6,7 +6,7 @@
 
 <script>
 export default {
-name: 'Login',
+name: 'app-login',
 data() {
     return {
         mesage: "Login",
