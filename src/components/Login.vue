@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col m12 card-panel">
-            <form>
+            <form @submit.prevent="iniciarSesion">
                 <div class="row">
                     <div class="col m3">
                         <label>User</label>
@@ -16,9 +16,9 @@
                 </div>
                 <div class="row">
                     <div class="col m3">
-                        <button type="submit" class="btn indigo accent-2">Login</button>
-                        <div class="progress">
-                            <div class="determinate indigo accent-2"></div>
+                        <button v-show="!loading" type="submit" class="btn indigo accent-2">Login</button>
+                        <div  v-show="loading" class="progress indigo accent-2">
+                            <div class="determinate"></div>
                         </div>
                     
 
