@@ -1,25 +1,29 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <!-- <HelloWorld msg="Prueba"/> -->
-  <div>
-    <li>
-      <router-link to="/Login">Login</router-link>
-    </li>
-    <li>
-      <router-link :to="{name: 'Students'}">Students</router-link>
-    </li>
-    <li>
-      <router-link :to="{name: 'Task'}">Task</router-link>
-    </li>
-    <li>
-      <router-link :to="{name: 'Teachers'}">Teachers</router-link>
-    </li>
-  </div>
+  <nav>
+    <div class="nav-wrapper indigo accent-2">
+      <ul class="rigth hide-on-med-and-down">
+        <li>
+          <router-link to="/Login">Login</router-link>
+        </li>
+        <li>
+          <router-link :to="{name: 'Students'}">Students</router-link>
+        </li>
+        <li>
+          <router-link :to="{name: 'Task'}">Task</router-link>
+        </li>
+        <li>
+          <router-link :to="{name: 'Teachers'}">Teachers</router-link>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-  <div>
+  
+  <div class="container white">
     <h1>View:</h1>
     <router-view></router-view>
   </div>
+  
 </template>
 
 <script>

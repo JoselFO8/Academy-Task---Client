@@ -4,6 +4,9 @@ import Students from '../components/Students.vue'
 import Task from '../components/Task.vue'
 import Teachers from '../components/Teachers.vue'
 
+/**
+ * Project routes
+ */
 const routes = [
     {
         path: '/Login',
@@ -27,6 +30,9 @@ const routes = [
     },
 ];
 
+/**
+ * Router
+ */
 const router = createRouter({
     history: createWebHistory(),
     routes
