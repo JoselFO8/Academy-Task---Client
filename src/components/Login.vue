@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col s12 center-align">
                         <a href="#!"><p class="blue-text text-darken-1">¿Forgot your password?</p></a>
-                        <a href="#!" @click="openModal"><p class="negrita blue-text text-darken-1">Create account</p></a>
+                        <a href="#!" @click="openModal"><p class="bolder blue-text text-darken-1">Create account</p></a>
                     </div>
                 </div>
 
@@ -135,6 +135,7 @@
 <script>
 // import axios from 'axios';
 import M from 'materialize-css'
+
 export default {
     name: 'app-login',
     data() {
@@ -287,7 +288,7 @@ export default {
     color: #ffffffe6;
 }
 
-.negrita {
+.bolder {
     font-weight: bolder;
 }
 

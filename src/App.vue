@@ -1,15 +1,20 @@
 <template>
   <!-- Nav bar -->
-  <!-- <div class="row">
-          <div class="col s12">
-              <img src="../assets/Slogan/academy.png" alt="Slogan academic">
-          </div>
-      </div> -->
+  
   <nav>
     <div class="nav-wrapper indigo accent-2">
-      <ul class="rigth hide-on-med-and-down">
+      <!-- <ul class="rigth hide-on-med-and-down"> -->
+      <a href="#" class="brand-logo">
+        <div class="image">
+          <img src="../src/assets/Slogan/academy.png" alt="Slogan academic">
+        </div>
+      </a>
+      <ul class="right hide-on-med-and-down">
         <li>
-          <router-link to="/Login">Login</router-link>
+          <router-link to="/">Login</router-link>
+        </li>
+        <li>
+          <router-link :to="{name: 'Account'}">Account</router-link>
         </li>
         <li>
           <router-link :to="{name: 'Students'}">Students</router-link>
@@ -40,5 +45,11 @@ export default {
 </script>
 
 <style>
-
+.image {
+  height: 60px;
+  margin-left: 30px;
+} 
+.image img {
+  height: 100%;
+}
 </style>
