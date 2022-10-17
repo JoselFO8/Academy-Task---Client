@@ -1,4 +1,10 @@
 <template>
+  <!-- Nav bar -->
+  <!-- <div class="row">
+          <div class="col s12">
+              <img src="../assets/Slogan/academy.png" alt="Slogan academic">
+          </div>
+      </div> -->
   <nav>
     <div class="nav-wrapper indigo accent-2">
       <ul class="rigth hide-on-med-and-down">
@@ -18,9 +24,8 @@
     </div>
   </nav>
 
-  
+  <!-- router-view -->
   <div class="container white">
-    <h1>View:</h1>
     <router-view></router-view>
   </div>
   
@@ -35,12 +40,5 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>

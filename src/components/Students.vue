@@ -2,11 +2,11 @@
     <div>Students</div>
     <div class="row">
         <div class="col m12">
-            <div class="progress indigo accent-2">
+            <div class="progress indigo accent-2" v-show="isLoading">
                 <div class="indeterminate white"></div>
             </div>
         
-            <table class="table bordered striped">
+            <table class="table bordered striped" v-show="!isLoading">
                 <thead>
                     <tr>
                         <th>Code</th>
@@ -17,13 +17,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>cod xsf21a3f2sadf</td>
-                        <td>Juan</td>
-                        <td>Stephens</td>
-                        <td>12-08-2000</td>
-                        <td class="center"><a href="#!"></a></td>
-                        <td class="center"><a href="#!"></a></td>
+                    <tr v-for="student in students" v-bind:key="student">
+                        <td>{{student.code}}</td>
+                        <td>{{student.name}}</td>
+                        <td>{{student.lastName}}</td>
+                        <td>{{student.dateOfBirth}}</td>
+                        <td class="center"><a href="#!"><i class="material-icons">edit</i></a></td>
+                        <td class="center"><a href="#!"><i class="material-icons">delete</i></a></td>
                     </tr>
                 </tbody>
             </table>
@@ -32,14 +32,24 @@
 </template>
 
 <script>
-export default {
-name: 'app-students',
-data() {
-    return {
-        mesage: "Students",
+    export default {
+        name: 'app-students',
+        data() {
+            return {
+                mesage: "Students",
+                students: [
+                    {
+                        code: 'a13a2sdf3as2df1',
+                        name: 'Juan',
+                        lastName: 'Stephens',
+                        dateOfBirth: '20-10-2000'
+                    }
+                ],
+                
+
+            }
+        }
     }
-}
-}
 </script>
 
 <style scoped>
