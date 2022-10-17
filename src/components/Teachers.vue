@@ -1,6 +1,7 @@
 <template>
-    <div>Students</div>
     <div class="row">
+
+        <!-- Table of task by student -->
         <div class="col m12">
             <div class="progress indigo accent-2" v-show="isLoading">
                 <div class="indeterminate white"></div>
@@ -18,8 +19,7 @@
                         <th colspan="1"></th>
                     </tr>
                 </thead>
-                <!-- Unrated
-                No observations -->
+                
                 <tbody>
                     <tr v-for="task in tasks" v-bind:key="task">
                         <td>{{task.studentId}}</td>
@@ -28,15 +28,71 @@
                         <td>{{task.solution}}</td>
                         <td>{{!task.calification ? 'Unrated' : task.calification}}</td>
                         <td>{{!task.observations ? 'No observations' : task.observations}}</td>
-                        <td class="center"><a href="#!"><i class="material-icons">rate</i></a></td>
+                        <td class="center"><a href="#!" @click="openModal"><i class="material-icons">rate</i></a></td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+
+        <!-- Rate modal -->
+        <div class="modal" id="rate-modal">
+            <div class="modal-content">
+                <div class="row">
+
+                    <div class="col s12">
+                        <div class="row">
+                            <div class="col s12 center-align">
+                                <img src="../assets/Slogan/academy.png" alt="Slogan academic">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="title col s12 indigo blue lighten-3 valign-wraper">
+                                <h4>Rate</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="input-field col s8 offset-s2">
+                                <select>
+                                    <option value="" disabled selected>Choose your option</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                                <label>Select rate</label>
+                            </div>
+                        </div>
+
+                        <div class="textarea col s8 offset-s2">
+                            <textarea cols="30" rows="10" v-model="rObservations"></textarea>
+                            <span class="helper-text"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s12 center-align">
+                            <button class="btn indigo blue lighten-3">Send</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+    import M from "materialize-css"
+
     export default {
         name: 'app-teachers',
         data() {
@@ -50,6 +106,8 @@
                         dateOfBirth: '20-10-2000'
                     }
                 ],
+                rObservations: '',
+                rates: [1,2,3,4,5,6,7,8,9,10],
                 tasks: [
                     {
                         _id: "6341c94bbb849ec4de641433",
@@ -113,11 +171,40 @@
                 
 
             }
+        },
+        mounted() {
+            var elems = document.querySelectorAll('.modal');
+            this.modales = M.Modal.init(elems, null);
+
+            // document.addEventListener('DOMContentLoaded', function() {
+                var select = document.querySelectorAll('select');
+                M.FormSelect.init(select);
+            // });
+        },
+        methods: {
+            openModal() {
+            var modal_rate = M.Modal.getInstance(document.querySelector('#rate-modal'));
+            modal_rate.open();
+            }
         }
     }
 </script>
 
 <style scoped>
+.title {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.title h4 {
+    margin: 0;
+    color: #ffffffe6;
+}
+
+.textarea textarea {
+    min-height: 100px;
+}
 </style>
   
