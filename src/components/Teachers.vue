@@ -9,21 +9,26 @@
             <table class="table bordered striped" v-show="!isLoading">
                 <thead>
                     <tr>
-                        <th>Code</th>
+                        <th>Code student</th>
                         <th>Name</th>
-                        <th>Last name</th>
-                        <th>Date of Birth</th>
-                        <th colspan="2"></th>
+                        <th>Description</th>
+                        <th>Solution</th>
+                        <th>Calification</th>
+                        <th>Observations</th>
+                        <th colspan="1"></th>
                     </tr>
                 </thead>
+                <!-- Unrated
+                No observations -->
                 <tbody>
-                    <tr v-for="student in students" v-bind:key="student">
-                        <td>{{student.code}}</td>
-                        <td>{{student.name}}</td>
-                        <td>{{student.lastName}}</td>
-                        <td>{{student.dateOfBirth}}</td>
-                        <td class="center"><a href="#!"><i class="material-icons">edit</i></a></td>
-                        <td class="center"><a href="#!"><i class="material-icons">delete</i></a></td>
+                    <tr v-for="task in tasks" v-bind:key="task">
+                        <td>{{task.studentId}}</td>
+                        <td>{{task.name}}</td>
+                        <td>{{task.description}}</td>
+                        <td>{{task.solution}}</td>
+                        <td>{{!task.calification ? 'Unrated' : task.calification}}</td>
+                        <td>{{!task.observations ? 'No observations' : task.observations}}</td>
+                        <td class="center"><a href="#!"><i class="material-icons">rate</i></a></td>
                     </tr>
                 </tbody>
             </table>
@@ -45,7 +50,7 @@
                         dateOfBirth: '20-10-2000'
                     }
                 ],
-                task: [
+                tasks: [
                     {
                         _id: "6341c94bbb849ec4de641433",
                         studentId: "6341b90bfacec9ef21f6b02c",
