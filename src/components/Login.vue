@@ -47,11 +47,12 @@
 
     </div>
 
-    <!-- Register -->
+    <!-- Modal register -->
     <div class="modal" id="register-modal">
         <div class="modal-content">
             <div class="row">
 
+                <!-- Head -->
                 <div class="col s12">
                     <div class="row">
                         <div class="col s12 center-align">
@@ -65,6 +66,7 @@
                     </div>
                 </div>
 
+                <!-- Inputs -->
                 <div class="row">
                     <div class="col s12 m12">
                         <input type="text" placeholder="Name" v-model="rName">
@@ -78,39 +80,41 @@
                         <input type="text" placeholder="Phone" v-model="rPhone">
                         <span class="helper-text"></span>
                     </div>
-    
                     <div class="col s12 m6">
-                        <input type="text" placeholder="Document type" v-model="rTipe_document">
-                        <span class="helper-text"></span>
+                        <div class="input-field" id="select-rol">
+                            <select v-model="rTipe_document">
+                                <option value="" disabled selected>Choose your document type</option>
+                                <option value="6341b482ee0c46a68e80febc">Cedula de Ciudadania</option>
+                                <option value="6341b494ee0c46a68e80febd">Tarjeta de Identidad</option>
+                                <option value="6341b4cfee0c46a68e80febe">Pasaporte</option>
+                                <option value="6341b4e0ee0c46a68e80febf">Cedula Extrangera</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="col s12 m6">
+                    <div class="height_adjustment col s12 m6">
                         <input type="text" placeholder="Document number" v-model="rdocument">
                         <span class="helper-text"></span>
                     </div>
-    
                     <div class="col s12 m4">
-                        <input type="text" placeholder="Rol" v-model="rRol">
-                        <span class="helper-text"></span>
-                        <!-- <div class="input-field col s12" id="select-rol">
+                        <div class="input-field" id="select-rol">
                             <select>
-                                <option value="" disabled selected>Choose your option</option>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
+                                <option value="" disabled selected>Choose your rol</option>
+                                <option value="6341b4f9ee0c46a68e80fec0">Profesor</option>
+                                <option value="6341b509ee0c46a68e80fec1">Alumno</option>
                             </select>
-                            <label>Select your rol</label>
-                        </div> -->
+                        </div>
                     </div>
-                    <div class="col s12 m4">
+                    <div class="height_adjustment col s12 m4">
                         <input type="text" placeholder="Username" v-model="rUsername">
                         <span class="helper-text"></span>
                     </div>
-                    <div class="col s12 m4">
+                    <div class="height_adjustment col s12 m4">
                         <input type="password" placeholder="PassWord" v-model="rPassWord">
                         <span class="helper-text"></span>
                     </div>
                 </div>
 
-
+                <!-- Send -->
                 <div class="row center-align">
                     <p>
                         <label>
@@ -118,12 +122,7 @@
                             <span>I accept the Terms of Service</span>
                         </label>
                     </p>
-                </div>
-
-                <div class="row">
-                    <div class="col s12 center-align">
-                        <button class="btn indigo blue lighten-3">Send</button>
-                    </div>
+                    <button class="btn indigo blue lighten-3">Send</button>
                 </div>
 
             </div>
@@ -157,15 +156,14 @@ export default {
             rRol: '',
 
             modales: [],
-            // selects: [],
         }
     },
     mounted() {
         var elems = document.querySelectorAll('.modal');
         this.modales = M.Modal.init(elems, null);
 
-        // var selectElems = document.querySelectorAll('select');
-        // this.selects = M.FormSelect.init(selectElems, null);
+        var select = document.querySelectorAll('select');
+        M.FormSelect.init(select);
     },
     methods: {
         // async login() 
@@ -230,15 +228,7 @@ export default {
             var modal_register = M.Modal.getInstance(document.querySelector('#register-modal'));
             modal_register.open();
         },
-        // openSelect () {
-        //     var dropdownOptions = {
-        //         option1: 'prueba1',
-        //         option2: 'prueba2' 
-        //     }
-        //     var select = M.Modal.getInstance(document.querySelector('#select-rol'));
-        //     select.dropdownOptions;
-        // },
-
+        
         // async getUser() {
         //     var config = {
         //         method: 'get',
@@ -292,5 +282,9 @@ export default {
     font-weight: bolder;
 }
 
+.height_adjustment {
+    padding-top: 15px;
+    margin-bottom: 7px;
+}
 </style>
   

@@ -20,9 +20,6 @@
           <router-link :to="{name: 'Students'}">Students</router-link>
         </li>
         <li>
-          <router-link :to="{name: 'Task'}">Task</router-link>
-        </li>
-        <li>
           <router-link :to="{name: 'Teachers'}">Teachers</router-link>
         </li>
       </ul>

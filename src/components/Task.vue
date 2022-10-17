@@ -19,12 +19,12 @@
 
 <script>
 export default {
-name: 'app-task',
-data() {
-    return {
-        mesage: "Task",
+    name: 'app-task',
+    data() {
+        return {
+            mesage: "Task",
+        }
     }
-}
 }
 </script>
 

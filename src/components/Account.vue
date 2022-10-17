@@ -2,6 +2,8 @@
     <div class="row">
         <div class="col s12">
             <br>
+
+            <!-- Header -->
             <div class="border pb row">
                 <div class="title col s11 valign-wraper">
                     <h3>Account information</h3>
@@ -10,6 +12,8 @@
                     <p class="blue-text text-darken-1 center-align">Edit</p>
                 </div>
             </div>
+
+            <!-- Personal information -->
             <div class="property_container row">
                 <div class="label col s2 valign-wrapper">
                     <label>Name: </label>
@@ -85,6 +89,9 @@
 }
 .pb {
     padding-bottom: 15px;
+}
+.title {
+    height: 60px;
 }
 .title h3 {
     margin: 0;

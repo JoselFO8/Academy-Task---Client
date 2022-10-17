@@ -1,6 +1,13 @@
 <template>
     <div class="row">
-
+        <br>
+        
+        <!-- Header -->
+        <div class="border pb row">
+            <div class="title col s12 valign-wraper">
+                <h3>Assigned tasks</h3>
+            </div>
+        </div>
         <!-- Table of task by student -->
         <div class="col m12">
             <div class="progress indigo accent-2" v-show="isLoading">
@@ -28,11 +35,14 @@
                         <td>{{task.solution}}</td>
                         <td>{{!task.calification ? 'Unrated' : task.calification}}</td>
                         <td>{{!task.observations ? 'No observations' : task.observations}}</td>
-                        <td class="center"><a href="#!" @click="openModal"><i class="material-icons">rate</i></a></td>
+                        <td v-show="!task.calification" class="center"><a href="#!" @click="openModal"><i class="material-icons">Rate</i></a></td>
                     </tr>
                 </tbody>
             </table>
         </div>
+
+        <!-- Border bottom -->
+        <div class="border row"></div>
 
         <!-- Rate modal -->
         <div class="modal" id="rate-modal">
@@ -53,9 +63,9 @@
                     </div>
 
                     <div class="row">
-                        <div class="col s12">
-                            <div class="input-field col s8 offset-s2">
-                                <select>
+                        <div class="col s8 offset-s2">
+                            <div class="input-field">
+                                <select class="select">
                                     <option value="" disabled selected>Choose your option</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -168,18 +178,14 @@
                         __v: 0
                     }
                 ]
-                
-
             }
         },
         mounted() {
             var elems = document.querySelectorAll('.modal');
             this.modales = M.Modal.init(elems, null);
 
-            // document.addEventListener('DOMContentLoaded', function() {
-                var select = document.querySelectorAll('select');
-                M.FormSelect.init(select);
-            // });
+            var select = document.querySelectorAll('.select');
+            M.FormSelect.init(select);
         },
         methods: {
             openModal() {
@@ -191,6 +197,17 @@
 </script>
 
 <style scoped>
+.border {
+    border-bottom: 2px solid #3d5afe96;
+}
+.pb {
+    padding-bottom: 15px;
+}
+.title h3 {
+    margin: 0;
+    font-weight: 500;
+    color: #3d5afe;
+}
 .title {
     height: 60px;
     display: flex;
