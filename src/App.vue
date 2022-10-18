@@ -50,3 +50,10 @@ export default {
   height: 100%;
 }
 </style>
+
+<!-- 
+  crear modal en teachers, para crear tareas
+  Corregir modal en students, para realizar tareas
+  validacones de formularios
+  conexiones listas para cuando se cuente con una db
+-->

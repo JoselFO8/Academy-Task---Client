@@ -84,10 +84,14 @@
                         <div class="input-field" id="select-rol">
                             <select v-model="rTipe_document">
                                 <option value="" disabled selected>Choose your document type</option>
-                                <option value="6341b482ee0c46a68e80febc">Cedula de Ciudadania</option>
-                                <option value="6341b494ee0c46a68e80febd">Tarjeta de Identidad</option>
-                                <option value="6341b4cfee0c46a68e80febe">Pasaporte</option>
-                                <option value="6341b4e0ee0c46a68e80febf">Cedula Extrangera</option>
+                                <!-- Cedula de Ciudadania -->
+                                <option value="6341b482ee0c46a68e80febc">Citizenship card</option>
+                                <!-- Tarjeta de Identidad -->
+                                <option value="6341b494ee0c46a68e80febd">Identity card</option>
+                                <!-- Pasaporte -->
+                                <option value="6341b4cfee0c46a68e80febe">Passport</option>
+                                <!-- Cedula Extrangera -->
+                                <option value="6341b4e0ee0c46a68e80febf">Foreign ID</option>
                             </select>
                         </div>
                     </div>
@@ -122,7 +126,12 @@
                             <span>I accept the Terms of Service</span>
                         </label>
                     </p>
-                    <button class="btn indigo blue lighten-3">Send</button>
+                    <button class="btn indigo blue lighten-3">
+                        <div class="valign-wrapper">
+                            <span class="mr">Send</span>
+                            <i class="material-icons">send</i>
+                        </div>
+                    </button>
                 </div>
 
             </div>
@@ -285,6 +294,9 @@ export default {
 .height_adjustment {
     padding-top: 15px;
     margin-bottom: 7px;
+}
+.mr {
+    margin-right: 8px;
 }
 </style>
   

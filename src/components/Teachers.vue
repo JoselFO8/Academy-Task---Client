@@ -35,7 +35,7 @@
                         <td>{{task.solution}}</td>
                         <td>{{!task.calification ? 'Unrated' : task.calification}}</td>
                         <td>{{!task.observations ? 'No observations' : task.observations}}</td>
-                        <td v-show="!task.calification" class="center"><a href="#!" @click="openModal"><i class="material-icons">Rate</i></a></td>
+                        <td v-show="!task.calification" class="center"><a href="#!" @click="openModal"><i class="material-icons">rate_review</i></a></td>
                     </tr>
                 </tbody>
             </table>
@@ -83,7 +83,7 @@
                         </div>
 
                         <div class="textarea col s8 offset-s2">
-                            <textarea cols="30" rows="10" v-model="rObservations"></textarea>
+                            <textarea cols="30" rows="10" placeholder="Write observations..." v-model="rObservations"></textarea>
                             <span class="helper-text"></span>
                         </div>
                     </div>

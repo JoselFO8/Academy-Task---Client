@@ -14,7 +14,7 @@
                 <div class="indeterminate white"></div>
             </div>
         
-            <table class="table bordered striped" v-show="!isLoading">
+            <table class="responsive-table bordered striped" v-show="!isLoading">
                 <thead>
                     <tr>
                         <th>Teacher code</th>
@@ -28,13 +28,6 @@
                 </thead>
                 
                 <tbody>
-                    <!-- professorId: "6341c91bbb849ec4de641431",
-                    name: "Tarea Prueba",
-                    description: "Esta es una Tarea de Prueba",
-                    solution: "Esta es la Solucion de la Tarea de Prueba",
-                    "calification": 10,
-                    "observations": "Estas son las observaciones de prueba" -->
-                    
                     <tr v-for="task in tasks" v-bind:key="task">
                         <td>{{task.professorId}}</td>
                         <td>{{task.name}}</td>
@@ -42,7 +35,7 @@
                         <td>{{!task.solution ? 'No solution sent' : task.solution}}</td>
                         <td>{{!task.calification ? 'Unrated' : task.calification}}</td>
                         <td>{{!task.observations ? 'No observations' : task.observations}}</td>
-                        <td v-show="!task.solution" class="center"><a href="#!" @click="openModal"><i class="material-icons">Solve</i></a></td>
+                        <td v-show="!task.solution" class="center"><a href="#!" @click="openModal"><i class="material-icons">developer_board</i></a></td>
                     </tr>
                 </tbody>
             </table>
@@ -91,7 +84,7 @@
                         </div>
 
                         <div class="textarea col s8 offset-s2">
-                            <textarea cols="30" rows="10" v-model="rObservations"></textarea>
+                            <textarea cols="30" rows="10" placeholder="Write your answer here..." v-model="rSolution"></textarea>
                             <span class="helper-text"></span>
                         </div>
                     </div>
@@ -124,8 +117,8 @@
                         dateOfBirth: '20-10-2000'
                     }
                 ],
-                rObservations: '',
-                rates: [1,2,3,4,5,6,7,8,9,10],
+
+                rSolution: '',
                 tasks: [
                     {
                         _id: "6341c94bbb849ec4de641433",
@@ -135,7 +128,7 @@
                         description: "Esta es una Tarea de Prueba",
                         solution: "",
                         __v: 0,
-                        "calification": 10,
+                        "calification": "",
                         "observations": "Estas son las observaciones de prueba"
                     },
                     {
